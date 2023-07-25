@@ -11,6 +11,16 @@ Create a function named instructorWithLongestName that will receive an array of 
 
 const instructorWithLongestName = function (instructors) {
   // Put your solution here
+  const longestIndex = instructors.reduce((longestIndex, currentElement, currentIndex, arr) => {
+    if (currentElement['name'].length > arr[longestIndex]['name'].length) {
+      return currentIndex;
+    } else {
+      return longestIndex;
+    }
+  }, 0);
+  
+  return instructors[longestIndex];
+
 };
 
 console.log(

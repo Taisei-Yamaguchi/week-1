@@ -8,11 +8,26 @@ Create a function named sumLargestNumbers that will receive an array of numbers 
 
 const sumLargestNumbers = function (data) {
   // Put your solution here
-  return 11;
+  
+  let max1 = Number.NEGATIVE_INFINITY; 
+  let max2 = Number.NEGATIVE_INFINITY; 
+
+  for (const num of data) {
+    if (num > max1) {
+      max2 = max1; 
+      max1 = num; 
+    } else if (num > max2) {
+      max2 = num; 
+    }
+  }
+
+  let sum=max1+max2;
+  return sum;
 };
 
 console.log(sumLargestNumbers([1, 10])); // 11
 console.log(sumLargestNumbers([1, 2, 3])); // 5
 console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2])); // 126
 
-module.exports = sumLargestNumbers;
+
+// module.exports = sumLargestNumbers;

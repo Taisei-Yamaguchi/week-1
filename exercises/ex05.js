@@ -20,6 +20,24 @@ Use some sort of looping. Do Not use String.prototype.replace
 
 const urlEncode = function (text) {
   // Put your solution here
+  let array=text.split(' ');
+
+  const filteredArray = array.filter((element) => {
+    return element.trim() !== "";
+  });
+
+  let string ="";
+
+  filteredArray.forEach((element, index) => {
+    if(index===0){
+      string+=element;
+    }else{
+      string+="%20";
+      string+=element;
+    }
+  });
+
+  return string;
 };
 
 console.log(urlEncode("cornerstone college")); //cornerstone%20college
